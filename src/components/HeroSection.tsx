@@ -1,0 +1,58 @@
+// src/components/HeroSection.tsx
+'use client';
+
+import React from 'react';
+import { useTypingEffect } from './useTypingEffect';
+
+const HeroSection: React.FC = () => {
+  const intro = "Hi, my name is";
+  const name = "John Doe."; // Replace with your name
+  const mainTagline = "I build interactive web experiences.";
+  const typedTagline = useTypingEffect(mainTagline, 75);
+  
+  const description =
+    "I'm a software engineer specializing in full-stack development. I enjoy bringing complex ideas to life with clean, efficient code and outstanding user interfaces.";
+
+  return (
+    <section 
+      id="hero" 
+      // Tailwind classes for the dark background and centering
+      className="flex flex-col justify-center min-h-screen pt-24 md:pt-0 px-4 md:px-24 bg-dark-background text-light-foreground"
+    >
+      <div className="max-w-4xl mx-auto">
+        
+        {/* Intro Text */}
+        <p className="text-lg md:text-xl font-mono text-teal-400 mb-3 animate-slide-in-up">
+          {intro}
+        </p>
+
+        {/* Main Name */}
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold mb-4 text-light-foreground animate-slide-in-up delay-100">
+          {name}
+        </h1>
+
+        {/* Interactive Typing Tagline */}
+        <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-6 text-gray-400 animate-slide-in-up delay-200">
+          {typedTagline}
+          {/* Cursor effect */}
+          <span className="inline-block w-1.5 h-8 bg-teal-400 ml-1 align-bottom animate-blink"></span>
+        </h2>
+
+        {/* Description */}
+        <p className="max-w-xl text-lg mb-10 text-gray-300 animate-slide-in-up delay-300">
+          {description}
+        </p>
+
+        {/* Call to Action Button */}
+        <a
+          href="#projects" // Link to the projects section
+          className="inline-block px-8 py-3 text-sm font-semibold uppercase tracking-widest text-teal-400 border-2 border-teal-400 rounded transition-all hover:bg-teal-400 hover:text-dark-background hover:shadow-lg hover:shadow-teal-400/20 animate-slide-in-up delay-400"
+        >
+          View My Work
+        </a>
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;
