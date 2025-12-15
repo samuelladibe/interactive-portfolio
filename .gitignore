@@ -1,0 +1,3 @@
+# Ignore pakage files
+node_modules/
+dist/
