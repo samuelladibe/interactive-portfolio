@@ -4,6 +4,12 @@
 import React from 'react';
 import { useTypingEffect } from './useTypingEffect';
 
+const spokenLanguages = [
+  { name: 'Français (C2)', flag: '🇫🇷' },
+  { name: 'English (C1)', flag: '🇬🇧' },
+  { name: 'Español (B2)', flag: '🇪🇸' },
+];
+
 const HeroSection: React.FC = () => {
   const intro = "Hi, my name is";
   const name = "John Doe."; // Replace with your name
@@ -43,6 +49,21 @@ const HeroSection: React.FC = () => {
           {description}
         </p>
 
+        {/* NEW: Spoken Languages Section */}
+        <div className="mb-10 animate-slide-in-up delay-400">
+          <h3 className="text-base font-semibold text-light-foreground mb-3">
+            Spoken Languages:
+          </h3>
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            {spokenLanguages.map((lang) => (
+              <span key={lang.name} className="flex items-center text-gray-300 font-mono text-sm">
+                <span className="text-xl mr-2">{lang.flag}</span> {/* Flag Icon */}
+                {lang.name}
+              </span>
+            ))}
+          </div>
+        </div>
+        
         {/* Call to Action Button */}
         <a
           href="#projects" // Link to the projects section

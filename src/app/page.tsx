@@ -1,15 +1,18 @@
 // src/app/page.tsx
-import HeroSection from '@/components/HeroSection';
-import ExperienceSection from '@/components/ExperienceSection';
-import SkillsSection from '@/components/SkillsSection'; // Import the new section
+import HeroSection from '@/components/HeroSection'; // About Me
+import CompetencesSection from '@/components/CompetencesSection'; // New Section (01.)
+import ExperienceSection from '@/components/ExperienceSection'; // 02.
+import SkillsSection from '@/components/SkillsSection'; // 03.
+import TestimonialsSection from '@/components/TestimonialsSection'; // 04.
 
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <HeroSection />
-      <ExperienceSection />
-      <SkillsSection /> {/* Add the Skills section here */}
-      {/* Contact and other sections will go here */}
+      <HeroSection /> 
+      <CompetencesSection /> {/* NEW POSITION */}
+      <ExperienceSection /> 
+      <SkillsSection /> 
+      <TestimonialsSection /> 
     </main>
   );
 }

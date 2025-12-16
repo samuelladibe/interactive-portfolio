@@ -15,3 +15,14 @@
     opacity: 0;
   }
 }
+
+/* Custom Swiper Styles for Dark Mode */
+.swiper-pagination-bullet {
+  background: #8892B0 !important; /* Secondary text color for inactive dots */
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  background: #64FFDA !important; /* Teal accent color for active dot */
+  opacity: 1;
+}

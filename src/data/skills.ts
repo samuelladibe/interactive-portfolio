@@ -5,7 +5,7 @@ import { SkillCategory } from '@/types';
 
 export const skillData: SkillCategory[] = [
   {
-    category: 'Languages',
+    category: 'Programming languages',
     skills: [
       { name: 'TypeScript' }, 
       { name: 'JavaScript' }, 
