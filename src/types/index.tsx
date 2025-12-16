@@ -10,7 +10,7 @@ export type ExperienceEntry = {
 
 export type SkillCategory = {
   category: string;
-  skills: { name: string; icon?: string }[];
+  skills: { name: string; icon?: string; isFeatured?: boolean }[]; // Added isFeatured to highlight certain skills
 };
 
 // ... other types for Testimonials, Projects, etc.
