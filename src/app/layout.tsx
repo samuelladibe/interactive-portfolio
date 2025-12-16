@@ -1,7 +1,8 @@
 // src/app/layout.tsx
 import './globals.css';
 import { Inter } from 'next/font/google'; // 1. IMPORT the font module
-import Navbar from '@/components/Navbar'; 
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer'; // Import the Footer component
 // Import Swiper styles (Crucial!)
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -21,9 +22,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}> 
+      <body className={inter.className}>
         <Navbar />
-        {children}
+        <main>{children}</main> {/* Ensure the page content is wrapped by <main> */}
+        <Footer /> {/* Add Footer here */}
       </body>
     </html>
   );
