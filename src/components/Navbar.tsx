@@ -7,8 +7,10 @@ import Link from 'next/link';
 // Array for navigation links (easy to modify later)
 const navLinks = [
   { name: 'About Me', href: '#about' },
+  { name: 'Skills', href: '#competences' },
   { name: 'Experiences', href: '#experience' },
-  { name: 'Skills', href: '#skills' },
+  { name: 'Tools', href: '#skills' },
+  { name: 'Testimonials', href: '#testimonials' },
   { name: 'Contact Me', href: '#contact' },
 ];
 

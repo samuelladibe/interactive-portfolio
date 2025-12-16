@@ -6,13 +6,13 @@ import { experienceData } from '@/data/experience';
 const ExperienceSection: React.FC = () => {
   return (
     <section 
-      id="experiences" 
+      id="experience" 
       className="py-24 px-4 md:px-24 bg-dark-background text-light-foreground min-h-screen"
     >
       <div className="max-w-4xl mx-auto">
         {/* Section Heading */}
         <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-light-foreground">
-          <span className="text-teal-400 font-mono text-4xl mr-2">01.</span> Experiences
+          <span className="text-teal-400 font-mono text-4xl mr-2">02.</span> Experiences and Academic background
         </h2>
 
         {/* Timeline Container */}
