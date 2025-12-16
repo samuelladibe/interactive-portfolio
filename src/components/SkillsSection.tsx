@@ -14,7 +14,7 @@ const SkillsSection: React.FC = () => {
       <div className="max-w-4xl mx-auto">
         {/* Section Heading */}
         <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-light-foreground">
-          <span className="text-teal-400 font-mono text-4xl mr-2">02.</span> Skills & Tools
+          <span className="text-teal-400 font-mono text-2xl mr-2">03.</span> Skills & Tools
         </h2>
 
         {skillData.map((categoryGroup, index) => (
@@ -27,7 +27,7 @@ const SkillsSection: React.FC = () => {
             {/* Skills Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {categoryGroup.skills.map((skill, skillIndex) => {
-                // Increment delay counter and apply the delay class
+                // Calculate and increment delay counter for staggered animation
                 const delayClass = `delay-${animationDelay}`;
                 animationDelay += 50; 
 
@@ -36,6 +36,8 @@ const SkillsSection: React.FC = () => {
                     key={skill.name} 
                     name={skill.name} 
                     delay={delayClass} 
+                    // CRUCIAL CHANGE: Passing the optional isFeatured prop
+                    isFeatured={skill.isFeatured} 
                   />
                 );
               })}

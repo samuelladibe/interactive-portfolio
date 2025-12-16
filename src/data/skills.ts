@@ -9,8 +9,8 @@ export const skillData: SkillCategory[] = [
     skills: [
       { name: 'TypeScript' }, 
       { name: 'JavaScript' }, 
-      { name: 'Python' }, 
-      { name: 'SQL' }
+      { name: 'Python', isFeatured: true }, 
+      { name: 'SQL', isFeatured: true }
     ],
   },
   {
@@ -27,15 +27,15 @@ export const skillData: SkillCategory[] = [
     skills: [
       { name: 'Node.js' }, 
       { name: 'Express' }, 
-      { name: 'PostgreSQL' }, 
+      { name: 'PostgreSQL', isFeatured: true }, 
       { name: 'MongoDB' }
     ],
   },
   {
     category: 'Tools & DevOps',
     skills: [
-      { name: 'Git' }, 
-      { name: 'Docker' }, 
+      { name: 'Git', isFeatured: true }, 
+      { name: 'Docker', isFeatured: true }, 
       { name: 'AWS/Vercel' }, 
       { name: 'Jira' }
     ],
