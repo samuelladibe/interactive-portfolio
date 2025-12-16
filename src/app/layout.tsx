@@ -2,6 +2,9 @@
 import './globals.css';
 import { Inter } from 'next/font/google'; // 1. IMPORT the font module
 import Navbar from '@/components/Navbar'; 
+// Import Swiper styles (Crucial!)
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 // 2. DEFINE the font variable using the Inter constructor
 const inter = Inter({ subsets: ['latin'] }); 

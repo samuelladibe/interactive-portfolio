@@ -6,10 +6,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules'; // Import modules for functionality
 import { testimonialData } from '@/data/testimonials';
 
-// Import Swiper styles (Crucial!)
-import 'swiper/css';
-import 'swiper/css/pagination';
-
 const TestimonialsSection: React.FC = () => {
   return (
     <section 

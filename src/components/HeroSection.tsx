@@ -52,7 +52,7 @@ const HeroSection: React.FC = () => {
         {/* NEW: Spoken Languages Section */}
         <div className="mb-10 animate-slide-in-up delay-400">
           <h3 className="text-base font-semibold text-light-foreground mb-3">
-            Spoken Languages:
+            Spoken Languages
           </h3>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
             {spokenLanguages.map((lang) => (
@@ -64,13 +64,24 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
         
-        {/* Call to Action Button */}
-        <a
-          href="#projects" // Link to the projects section
-          className="inline-block px-8 py-3 text-sm font-semibold uppercase tracking-widest text-teal-400 border-2 border-teal-400 rounded transition-all hover:bg-teal-400 hover:text-dark-background hover:shadow-lg hover:shadow-teal-400/20 animate-slide-in-up delay-400"
-        >
-          View My Work
-        </a>
+        {/* Dual Call to Action Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 mt-8 animate-slide-in-up delay-500">
+            {/* Primary CTA: VIEW MY WORK (Teal Outline) */}
+            <a
+                href="#projects" // Link to the projects section
+                className="inline-block px-8 py-3 text-sm font-semibold uppercase tracking-widest text-teal-400 border-2 border-teal-400 rounded transition-all hover:bg-teal-400 hover:text-dark-background hover:shadow-lg hover:shadow-teal-400/20"
+            >
+                View My Work
+            </a>
+
+            {/* Secondary CTA: CONTACT ME (Solid Teal Fill, less emphasis than the primary) */}
+            <a
+                href="#contact" // Link to the existing contact section
+                className="inline-block px-8 py-3 text-sm font-semibold uppercase tracking-widest text-dark-background bg-teal-400 border-2 border-teal-400 rounded transition-all hover:bg-teal-300 hover:shadow-lg hover:shadow-teal-400/20"
+            >
+                Contact Me
+            </a>
+        </div>
       </div>
     </section>
   );
