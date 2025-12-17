@@ -20,5 +20,13 @@ export type Testimonial = {
   project: string; // e.g., "Full Stack Platform Migration"
 };
 
+export type Project = {
+  title: string;
+  description: string;
+  tags: string[];
+  githubUrl?: string;
+  liveUrl?: string;
+  imageUrl: string;
+};
 
 // ... other types for Testimonials, Projects, etc.

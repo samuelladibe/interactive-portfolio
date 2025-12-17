@@ -47,7 +47,7 @@ const ContactSection: React.FC = () => {
         
         {/* Section Heading */}
         <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-light-foreground text-center">
-          <span className="text-teal-400 font-mono text-4xl mr-2">05.</span> Contact me
+          <span className="text-teal-400 font-mono text-4xl mr-2">06.</span> Contact me
         </h2>
 
         {/* Main Grid: Info + Form */}
