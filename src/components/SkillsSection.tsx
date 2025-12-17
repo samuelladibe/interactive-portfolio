@@ -14,7 +14,7 @@ const SkillsSection: React.FC = () => {
       <div className="max-w-4xl mx-auto">
         {/* Section Heading */}
         <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-light-foreground">
-          <span className="text-teal-400 font-mono text-4xl mr-2">03.</span> Tools
+          <span className="text-teal-400 font-mono text-4xl mr-2">04.</span> Tools
         </h2>
 
         {skillData.map((categoryGroup, index) => (

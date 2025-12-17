@@ -12,7 +12,7 @@ const ExperienceSection: React.FC = () => {
       <div className="max-w-4xl mx-auto">
         {/* Section Heading */}
         <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-light-foreground">
-          <span className="text-teal-400 font-mono text-4xl mr-2">02.</span> Experiences and Academic background
+          <span className="text-teal-400 font-mono text-4xl mr-2">03.</span> Experiences and Academic background
         </h2>
 
         {/* Timeline Container */}

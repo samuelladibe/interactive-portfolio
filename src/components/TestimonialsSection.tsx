@@ -16,7 +16,7 @@ const TestimonialsSection: React.FC = () => {
         
         {/* Section Heading */}
         <h2 className="text-3xl sm:text-4xl font-bold mb-16 text-light-foreground text-center">
-          <span className="text-teal-400 font-mono text-4xl mr-2">04.</span> Client Endorsements
+          <span className="text-teal-400 font-mono text-4xl mr-2">05.</span> Client Endorsements
         </h2>
 
         <Swiper
