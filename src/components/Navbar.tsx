@@ -4,6 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FiMenu, FiX } from 'react-icons/fi'; // Import icons for menu button
+// import LanguageSwitcher from './LanguageSwitcher'; // Import the language switcher component
 
 // Array for navigation links (easy to modify later)
 const navLinks = [
@@ -68,6 +69,8 @@ const Navbar: React.FC = () => {
           ))}
         </div>
         
+        {/* Language Switcher Component here <LanguageSwitcher /> */}
+
         {/* Resume Button (Hidden on mobile) */}
         <a
           href="/resume.pdf"
@@ -77,7 +80,7 @@ const Navbar: React.FC = () => {
         >
           Resume
         </a>
-        
+
         {/* Mobile Menu Icon (Visible on mobile) */}
         <div className="md:hidden z-50">
           <button 
