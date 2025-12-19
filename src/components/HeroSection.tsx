@@ -3,8 +3,13 @@
 
 import React from 'react';
 import ProfileImage from './ProfileImage';
+import { useTypingEffect } from './useTypingEffect';
+
 
 const HeroSection: React.FC = () => {
+  const mainTagline = "I build interactive web experiences.";
+  const typedTagline = useTypingEffect(mainTagline, 75);
+
   return (
     <section id="hero" className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-dark-background px-4 md:px-24">
       
@@ -16,12 +21,12 @@ const HeroSection: React.FC = () => {
         
         {/* LEFT SIDE: Your Text Content */}
         <div className="order-2 lg:order-1 flex flex-col items-start z-10">
-          <p className="font-mono text-teal-400 mb-4 animate-slide-in-up">Hi, my name is</p>
-          <h1 className="text-5xl sm:text-7xl font-bold text-light-foreground mb-4 animate-slide-in-up delay-100">
+          <p className="text-lg md:text-xl font-mono text-teal-400 mb-4 animate-slide-in-up">Hi, my name is</p>
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-light-foreground mb-4 animate-slide-in-up delay-100">
             Samuel LADIBE.
           </h1>
-          <h2 className="text-4xl sm:text-6xl font-bold text-gray-400 mb-6 animate-slide-in-up delay-200 leading-tight">
-            I build interactive web experiences.
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-6 text-gray-400 animate-slide-in-up delay-100">
+            {typedTagline}
           </h2>
           
           <p className="max-w-xl text-lg mb-10 text-gray-400 animate-slide-in-up delay-300">
