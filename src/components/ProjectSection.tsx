@@ -11,8 +11,7 @@ const ProjectsSection: React.FC = () => {
         {/* Section Heading */}
         <div className="flex flex-col mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-light-foreground">
-            <span className="text-teal-400 font-mono text-4xl mr-2">02.</span> 
-            Mes Réalisations
+            <span className="text-teal-400 font-mono text-4xl mr-2">02.</span> Mes Réalisations
           </h2>
           {/* <div className="h-[1px] w-full md:w-1/2 bg-gray-700 mt-4"></div> */}
         </div>
