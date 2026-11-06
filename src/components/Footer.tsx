@@ -1,41 +1,16 @@
-'use client';
-// src/components/Footer.tsx
-import React from 'react';
-import Link from 'next/link';
-import { FiArrowUp } from 'react-icons/fi';
+import type { Content } from '@/content/types';
 
-const Footer: React.FC = () => {
-  const currentYear = new Date().getFullYear();
-
-  // Function to smoothly scroll to the top
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
-
+export default function Footer({ t }: { t: Content['footer'] }) {
   return (
-    <footer className="bg-dark-background border-t border-gray-700/50 py-10 px-4 md:px-24 text-gray-500">
-      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm">
-        
-        {/* Copyright */}
-        <p className="mb-4 sm:mb-0">
-          &copy; {currentYear} Samuel Ladibe. Tous droits réservés.
+    <footer className="border-t border-line">
+      <div className="mx-auto flex max-w-page flex-wrap items-center justify-between gap-3 px-5 py-7 text-sm text-muted sm:px-8">
+        <p>
+          © {new Date().getFullYear()} Samuel LADIBE. {t.rights}
         </p>
-
-        {/* Back to Top Link */}
-        <button
-          onClick={scrollToTop}
-          className="flex items-center text-teal-400 hover:text-light-foreground transition-colors duration-200 font-mono"
-          aria-label="Scroll back to top"
-        >
-          <FiArrowUp className="w-4 h-4 mr-1" />
-          Back to Top
-        </button>
+        <a href="#" className="underline underline-offset-4 hover:text-ink">
+          {t.top}
+        </a>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
