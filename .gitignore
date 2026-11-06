@@ -3,3 +3,8 @@ node_modules/
 dist/
 build/
 .next/
+
+# Private working documents (never publish)
+Dossier Samuel LADIBE.html
+*.tsbuildinfo
+CV Data Engineer GCP - SL.pdf
