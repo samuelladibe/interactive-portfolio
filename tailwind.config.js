@@ -1,35 +1,26 @@
-// tailwind.config.ts
-import type { Config } from 'tailwindcss';
-
-const config: Config = {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ['./src/app/**/*.{ts,tsx}', './src/components/**/*.{ts,tsx}'],
+  // Light is the default. Dark only applies after the visitor chooses it.
+  darkMode: ['selector', '[data-theme="dark"]'],
   theme: {
     extend: {
-      // Add custom styles here
       colors: {
-        // We'll define a custom primary color for the portfolio's branding
-        'primary-accent': '#FF5733', // Example: a vibrant orange/red
-        'dark-background': '#0A192F', // Deep navy for dark mode
-        'light-foreground': '#CCD6F6', // Light gray/blue text for dark mode
+        paper: 'var(--paper)',
+        ink: 'var(--ink)',
+        muted: 'var(--muted)',
+        line: 'var(--line)',
+        wash: 'var(--wash)',
+        accent: 'var(--accent)',
+        signal: 'var(--signal)',
       },
-      // Adding a subtle custom animation for components that slide in
-      animation: {
-        'slide-in-up': 'slide-in-up 0.5s ease-out forwards',
+      fontFamily: {
+        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-body)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
       },
-      // Define the keyframes for the custom animation
-      keyframes: {
-        'slide-in-up': {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-      },
+      maxWidth: { page: '76rem' },
     },
   },
   plugins: [],
 };
-
-export default config;

@@ -1,42 +1,95 @@
-/* src/app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Custom class for the typing cursor animation */
-@layer utilities {
-  .animate-blink {
-    animation: blink 1s step-start infinite;
+:root {
+  --paper: #ffffff;
+  --ink: #12303e;
+  --muted: #55707c;
+  --line: #dde6e9;
+  --route: #b4c7ce;
+  --wash: #f1f8f7;
+  --accent: #0b7a6e;
+  --signal: #2eb5a2;
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --paper: #0e1f29;
+  --ink: #eaf1f3;
+  --muted: #9bb1bb;
+  --line: #27424f;
+  --route: #3e5f6e;
+  --wash: #15303a;
+  --accent: #5fd6c4;
+  --signal: #3cc9b5;
+  color-scheme: dark;
+}
+
+html {
+  scroll-padding-top: 5.5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.65;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: var(--signal);
+  color: #0e1f29;
+}
+
+/* Pipeline: the routes draw once on load, then only move when a source is chosen. */
+.pipe-source:focus-visible {
+  outline: none;
+}
+.pipe-source:focus-visible .pipe-source-box {
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+  .pipe-draw {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: pipe-draw 1.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  .pipe-packet {
+    animation: pipe-travel 1.6s linear 3 both;
   }
 }
 
-@keyframes blink {
-  50% {
-    opacity: 0;
+@media (prefers-reduced-motion: reduce) {
+  .pipe-packet {
+    display: none;
   }
 }
 
-/* Custom Swiper Styles for Dark Mode */
-.swiper-pagination-bullet {
-  background: #8892B0 !important; /* Secondary text color for inactive dots */
-  opacity: 0.5;
+@keyframes pipe-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
-.swiper-pagination-bullet-active {
-  background: #64FFDA !important; /* Teal accent color for active dot */
-  opacity: 1;
-}
-
-@keyframes morph {
-  0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-  50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
-  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-}
-
-.animate-morph {
-  animation: morph 8s ease-in-out infinite;
-}
-
-.animate-spin-slow {
-  animation: spin 12s linear infinite;
+@keyframes pipe-travel {
+  from {
+    stroke-dashoffset: 4;
+  }
+  to {
+    stroke-dashoffset: -100;
+  }
 }
