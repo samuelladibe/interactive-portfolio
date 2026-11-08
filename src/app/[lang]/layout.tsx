@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Bricolage_Grotesque, IBM_Plex_Sans, JetBrains_Mono } from 'next/font/google';
+import localFont from 'next/font/local';
 import { notFound } from 'next/navigation';
 import type { ReactNode } from 'react';
 import Footer from '@/components/Footer';
@@ -8,9 +8,12 @@ import { content } from '@/content';
 import { LANGS, isLang } from '@/content/types';
 import '../globals.css';
 
-const display = Bricolage_Grotesque({ subsets: ['latin'], variable: '--font-display', weight: ['500', '700', '800'] });
-const body = IBM_Plex_Sans({ subsets: ['latin'], variable: '--font-body', weight: ['400', '500', '600'] });
-const mono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono', weight: ['400', '500'] });
+// Latin variable fonts stored in the repo (SIL Open Font License, see ../fonts), so builds never
+// depend on reaching Google Fonts.
+const display = localFont({ src: '../fonts/BricolageGrotesque-latin.woff2', weight: '500 800', variable: '--font-display' });
+const body = localFont({ src: '../fonts/IBMPlexSans-latin.woff2', weight: '400 600', variable: '--font-body' });
+// Only used in the pipeline diagram, below the fold: not worth a preload.
+const mono = localFont({ src: '../fonts/JetBrainsMono-latin.woff2', weight: '400 500', variable: '--font-mono', preload: false });
 
 // Runs before paint so a saved dark choice never flashes white. Without a saved choice the site stays light.
 const themeScript = `try{if(localStorage.getItem('theme')==='dark')document.documentElement.dataset.theme='dark'}catch(e){}`;
