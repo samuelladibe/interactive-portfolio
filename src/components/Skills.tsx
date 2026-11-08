@@ -41,26 +41,31 @@ export default function Skills({ t }: { t: Content['skills'] }) {
     </button>
   );
 
+  // Skills that don't match are removed rather than dimmed: on a phone most of the list is
+  // below the screen, so only a list that shrinks shows the filter worked.
+  const groups = t.groups
+    .map((group) => ({ ...group, items: group.items.filter(([, level]) => !filter || level === filter) }))
+    .filter((group) => group.items.length > 0);
+  const shown = groups.reduce((total, group) => total + group.items.length, 0);
+
   return (
     <Section id="skills" title={t.title}>
       <div role="group" aria-label={t.filterLabel} className="flex flex-wrap gap-2">
         {filterButton(null, t.all)}
         {LEVELS.map((level) => filterButton(level, t.levels[level]))}
       </div>
+      <p aria-live="polite" className="mt-4 text-sm text-muted">
+        {t.count.replace('{n}', String(shown))}
+      </p>
 
-      <dl className="mt-10">
-        {t.groups.map((group) => (
+      <dl className="mt-6">
+        {groups.map((group) => (
           <div key={group.title} className="grid gap-3 border-t border-line py-5 md:grid-cols-[14rem_minmax(0,1fr)] md:gap-8">
             <dt className="font-display text-lg font-bold">{group.title}</dt>
             <dd>
               <ul className="flex flex-wrap gap-x-5 gap-y-1.5">
                 {group.items.map(([name, level]) => (
-                  <li
-                    key={name}
-                    className={`inline-flex items-center gap-2 transition-opacity duration-200 ${
-                      filter && filter !== level ? 'opacity-25' : ''
-                    }`}
-                  >
+                  <li key={name} className="inline-flex items-center gap-2">
                     <Marker level={level} />
                     {name}
                   </li>

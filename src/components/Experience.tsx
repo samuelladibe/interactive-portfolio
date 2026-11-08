@@ -1,4 +1,5 @@
 import type { Content } from '@/content/types';
+import JobGroup from './JobGroup';
 import Section from './Section';
 
 export default function Experience({ t }: { t: Content['experience'] }) {
@@ -46,20 +47,13 @@ export default function Experience({ t }: { t: Content['experience'] }) {
               </p>
             </header>
             <div>
-              {job.summary && <p className="mb-10 max-w-[66ch] text-xl leading-relaxed">{job.summary}</p>}
-              <div className="grid gap-x-12 gap-y-10 md:grid-cols-2">
+              {job.summary && <p className="mb-8 max-w-[66ch] text-lg leading-relaxed md:mb-10 md:text-xl">{job.summary}</p>}
+              <div className="border-b border-line md:grid md:grid-cols-2 md:gap-x-12 md:gap-y-10 md:border-0">
                 {job.groups.map((group) => (
-                  <div key={group.title}>
-                    <h4 className="font-display text-lg font-bold">{group.title}</h4>
-                    <ul className="mt-3 space-y-2.5 text-[0.975rem] leading-relaxed text-muted">
-                      {group.items.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
+                  <JobGroup key={group.title} title={group.title} items={group.items} />
                 ))}
               </div>
-              <p className="mt-10 text-sm leading-relaxed text-muted">
+              <p className="mt-8 text-sm leading-relaxed text-muted md:mt-10">
                 <span className="font-semibold text-ink">{t.stackLabel}</span> {job.stack}
               </p>
             </div>

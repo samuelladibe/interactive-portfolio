@@ -69,12 +69,17 @@ export interface Content {
   projects: {
     title: string;
     lead: string;
+    /** `{n}` is replaced by the number of hidden projects. */
+    showMore: string;
+    showLess: string;
     items: { name: string; meta: string; text: string; result?: string }[];
   };
   skills: {
     title: string;
     filterLabel: string;
     all: string;
+    /** `{n}` is replaced by the number of skills shown. */
+    count: string;
     levels: Record<Level, string>;
     groups: { title: string; items: [string, Level][]; note?: string }[];
   };

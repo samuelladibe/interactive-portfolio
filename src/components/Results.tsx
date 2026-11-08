@@ -14,9 +14,12 @@ export default function Results({ t }: { t: Content['results'] }) {
                   {gain.what}, {gain.where}
                 </p>
                 <p className="mt-1 font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
+                  {/* On a phone the old value sits on its own line so the new one never wraps around it. */}
                   {gain.before && (
                     <>
-                      <s className="font-medium text-muted decoration-signal decoration-2">{gain.before}</s>{' '}
+                      <s className="block text-2xl font-medium text-muted decoration-signal decoration-2 sm:inline sm:text-[length:inherit]">
+                        {gain.before}
+                      </s>{' '}
                     </>
                   )}
                   {gain.after}

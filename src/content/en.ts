@@ -208,6 +208,8 @@ export const en: Content = {
   projects: {
     title: 'Shipped projects',
     lead: 'Products and tools built at Digital Forge in 2026.',
+    showMore: 'Show the other {n} projects',
+    showLess: 'Show fewer projects',
     items: [
       { name: 'AI dashboard agent', meta: 'May to Aug., lead designer', text: 'Text-to-SQL AI agent that turns a business brief into a React dashboard on top of BigQuery.', result: '83 tests, target of 2-3 days down to 2-3 hours' },
       { name: 'SaaS BI platform', meta: 'Jan. to July, full-stack and DevOps', text: 'In-house SaaS BI: self-hosted Supabase, Terraform, Workload Identity CI/CD, server-side filters.', result: 'Year-on-year comparisons and cascading filters' },
@@ -224,6 +226,7 @@ export const en: Content = {
     title: 'What I can prove, and at what level',
     filterLabel: 'Filter by level',
     all: 'All',
+    count: '{n} skills shown',
     levels: {
       production: 'Shipped and maintained in production',
       project: 'Used on a work or personal project',

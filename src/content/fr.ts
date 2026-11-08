@@ -208,6 +208,8 @@ export const fr: Content = {
   projects: {
     title: 'Projets livrés',
     lead: 'Produits et outils conçus chez Digital Forge en 2026.',
+    showMore: 'Voir les {n} autres projets',
+    showLess: 'Afficher moins de projets',
     items: [
       { name: 'Agent IA de dashboards', meta: 'Mai à août, concepteur principal', text: 'Agent IA text-to-SQL qui transforme un brief métier en dashboard React depuis BigQuery.', result: '83 tests, objectif de 2-3 jours à 2-3 heures' },
       { name: 'Plateforme BI SaaS', meta: 'Janv. à juil., full-stack et DevOps', text: 'BI SaaS maison : Supabase auto-hébergé, Terraform, CI/CD Workload Identity, filtres server-side.', result: 'Comparaisons N-1 et filtres en cascade' },
@@ -224,6 +226,7 @@ export const fr: Content = {
     title: 'Ce que je peux prouver, et à quel niveau',
     filterLabel: 'Filtrer par niveau',
     all: 'Tout',
+    count: '{n} compétences affichées',
     levels: {
       production: 'Livré et maintenu en production',
       project: 'Utilisé sur un projet pro ou perso',
