@@ -1,0 +1,17 @@
+# Keep the image small and never copy private or local-only files into it.
+.git
+.next
+node_modules
+*.tsbuildinfo
+.env*
+
+# Private documents
+*.pdf
+Dossier*
+
+# Local tooling
+.playwright-mcp
+.rtk
+.claude
+CLAUDE.md
+graphify-out
