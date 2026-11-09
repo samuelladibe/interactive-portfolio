@@ -41,7 +41,7 @@ export const en: Content = {
       { id: 'postgres', name: 'PostgreSQL', route: 'airbyte', note: 'Replication from a hot standby database, a case that had to be solved in production.' },
       { id: 'oracle', name: 'Oracle, MSSQL', route: 'airbyte', note: 'Client databases loaded into BigQuery, including incidents caused by Oracle synonyms.' },
       { id: 'custom', name: 'APIs with no connector', route: 'airbyte', note: '12 connectors built with the Low-code CDK: incremental syncs, cursor pagination, backoff, rate limiting.' },
-      { id: 'netsuite', name: 'NetSuite', route: 'python', note: 'A 22-hour Airbyte connector replaced by a SuiteQL OAuth 1.0a script that runs in seconds.' },
+      { id: 'netsuite', name: 'NetSuite', route: 'python', note: 'A 22-hour Airbyte connector replaced by a SuiteQL OAuth 1.0a script that runs in a few minutes.' },
       { id: 'skeepers', name: 'Skeepers', route: 'python', note: 'Batch loading, retry on failure, automatic JWT token and deduplication with MERGE.' },
       { id: 'sfmc', name: 'Salesforce MC', route: 'python', note: 'Pagination, D-1 watermark, with a choice of full refresh or incremental.' },
       { id: 'shippingbo', name: 'Shippingbo', route: 'python', note: 'Batches of 10,000 rows, rate limit respected, running on Cloud Run with Pub/Sub.' },
@@ -53,7 +53,7 @@ export const en: Content = {
     gainsTitle: 'What got faster',
     scaleTitle: 'What I keep running',
     gains: [
-      { what: 'NetSuite sync', before: '22 h', after: 'a few seconds', where: 'Digital Forge' },
+      { what: 'NetSuite sync', before: '22 h', after: 'a few minutes', where: 'Digital Forge' },
       { what: 'MITRE ATT&CK matrix update', before: 'several hours', after: 'under 5 min', where: 'I-TRACING' },
       { what: 'EDR coverage reference data', before: 'several hours', after: 'a few minutes', where: 'I-TRACING' },
       { what: 'API calls to Chronicle SOAR', after: 'about 90% fewer', where: 'I-TRACING' },
@@ -96,7 +96,7 @@ export const en: Content = {
           {
             title: 'Python ingestion scripts',
             items: [
-              'NetSuite: a 22-hour Airbyte connector replaced by a SuiteQL OAuth 1.0a script running in seconds, with CDC.',
+              'NetSuite: a 22-hour Airbyte connector replaced by a SuiteQL OAuth 1.0a script running in a few minutes, with CDC.',
               'Skeepers, Salesforce Marketing Cloud, Shippingbo: batching, retry on failure, incremental watermark, MERGE, Cloud Run and Pub/Sub.',
               'Shared foundation: Google Chat alerting, schema compliance, monitoring of every production script.',
             ],
