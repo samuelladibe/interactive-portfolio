@@ -28,7 +28,7 @@ export const fr: Content = {
   },
   pipeline: {
     title: 'Le chemin de la donnée, de la source au dashboard',
-    hint: 'Choisissez une source pour voir sa route et ce que j’y ai résolu.',
+    hint: 'Choisissez une source pour voir sa route.',
     sourcesLabel: 'Sources',
     ingestionLabel: 'Ingestion',
     warehouseLabel: 'BigQuery, modélisé avec Dataform',
