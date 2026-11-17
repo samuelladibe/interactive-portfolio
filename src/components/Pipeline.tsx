@@ -5,7 +5,7 @@ import type { Content, Route } from '@/content/types';
 
 // Diagram geometry, in viewBox units.
 const WIDTH = 1200;
-const HEIGHT = 420;
+const HEIGHT = 560;
 const LABEL_RIGHT = 188;
 const SOURCE_TOP = 58;
 const SOURCE_STEP = 36;
@@ -21,6 +21,19 @@ const LAYERS = [
 const OUTPUT_X = 1084;
 const OUTPUT_WIDTH = 116;
 const INGEST_Y: Record<Route, number> = { airbyte: 130, python: 276, other: 382 };
+
+// Tools being learned sit in their own band below the production routes, drawn dashed.
+const LEARNING_TOP = 428;
+const LEARNING_WIDTH = 170;
+const LEARNING_NODES = [
+  { label: 'Dataflow', y: 470 },
+  { label: 'Dataproc Serverless', y: 522 },
+];
+const RAW_ENTRY_X = LAYERS[0].x + LAYERS[0].width / 2;
+const RAW_BOTTOM = CORE_Y + 17;
+const ORCHESTRATOR = { x: 720, y: 452, width: 332, height: 88 };
+const WAREHOUSE_BOTTOM = 252;
+const DASH = '5 5';
 
 const curve = (x1: number, y1: number, x2: number, y2: number) => {
   const mid = (x1 + x2) / 2;
@@ -194,6 +207,62 @@ export default function Pipeline({ t }: { t: Content['pipeline'] }) {
           </g>
         ))}
 
+        {/* Learning band: dashed, so it never reads as a route used in production. */}
+        <g aria-label={`${t.learning.label}, Dataflow, Dataproc Serverless, Composer`}>
+          <line x1="0" y1={LEARNING_TOP} x2={WIDTH} y2={LEARNING_TOP} stroke="var(--line)" strokeDasharray={DASH} />
+          <text x="8" y={LEARNING_TOP + 34} fontSize="14" fontWeight="600" fill="var(--ink)" className="font-sans">
+            {t.learning.label}
+          </text>
+          <foreignObject x="8" y={LEARNING_TOP + 44} width={INGEST_X - 40} height="60">
+            <p className="font-sans text-[13px] leading-snug text-muted">{t.learning.note}</p>
+          </foreignObject>
+
+          <g fill="none" stroke="var(--route)" strokeWidth="1.25" strokeDasharray={DASH}>
+            {LEARNING_NODES.map(({ label, y }) => {
+              const start = INGEST_X + LEARNING_WIDTH;
+              return <path key={label} d={`M${start},${y} C${RAW_ENTRY_X},${y} ${RAW_ENTRY_X},${y} ${RAW_ENTRY_X},${RAW_BOTTOM}`} />;
+            })}
+            <path d={`M${ORCHESTRATOR.x + ORCHESTRATOR.width / 2},${ORCHESTRATOR.y} L${ORCHESTRATOR.x + ORCHESTRATOR.width / 2},${WAREHOUSE_BOTTOM}`} />
+          </g>
+
+          {LEARNING_NODES.map(({ label, y }) => (
+            <g key={label}>
+              <rect
+                x={INGEST_X}
+                y={y - 18}
+                width={LEARNING_WIDTH}
+                height="36"
+                rx="18"
+                fill="var(--paper)"
+                stroke="var(--muted)"
+                strokeWidth="1.25"
+                strokeDasharray={DASH}
+              />
+              <text x={INGEST_X + LEARNING_WIDTH / 2} y={y + 5} textAnchor="middle" fontSize="13" fill="var(--muted)" className="font-mono">
+                {label}
+              </text>
+            </g>
+          ))}
+
+          <rect
+            x={ORCHESTRATOR.x}
+            y={ORCHESTRATOR.y}
+            width={ORCHESTRATOR.width}
+            height={ORCHESTRATOR.height}
+            rx="10"
+            fill="var(--paper)"
+            stroke="var(--muted)"
+            strokeWidth="1.25"
+            strokeDasharray={DASH}
+          />
+          <text x={ORCHESTRATOR.x + ORCHESTRATOR.width / 2} y={ORCHESTRATOR.y + 38} textAnchor="middle" fontSize="13" fill="var(--muted)" className="font-mono">
+            Composer (Airflow)
+          </text>
+          <text x={ORCHESTRATOR.x + ORCHESTRATOR.width / 2} y={ORCHESTRATOR.y + 60} textAnchor="middle" fontSize="13" fill="var(--muted)" className="font-sans">
+            {t.learning.orchestration}
+          </text>
+        </g>
+
         {/* Output */}
         <rect x={OUTPUT_X} y={CORE_Y - 18} width={OUTPUT_WIDTH} height="36" rx="18" fill="var(--ink)" />
         <text
@@ -216,6 +285,11 @@ export default function Pipeline({ t }: { t: Content['pipeline'] }) {
           {/* The diagram is hidden on small screens, so the route is written out here. */}
           <p className="mt-3 font-mono text-sm text-muted lg:hidden">
             {[ingestLabel, ...LAYERS.map((layer) => layer.name), t.outputNode].join(' > ')}
+          </p>
+          <p className="mt-3 text-sm text-muted lg:hidden">
+            <span className="font-semibold text-ink">{t.learning.label}</span>
+            <br />
+            Dataflow, Dataproc Serverless, Composer (Airflow)
           </p>
         </div>
       </div>

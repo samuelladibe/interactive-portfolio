@@ -35,6 +35,7 @@ export const en: Content = {
     outputLabel: 'Consumption',
     outputNode: 'Dashboards',
     otherNode: 'Datastream, SFTP',
+    learning: { label: 'Currently learning', note: 'Next tools for batch and streaming ingestion', orchestration: 'DAG orchestration' },
     sources: [
       { id: 'shopify', name: 'Shopify', route: 'airbyte', note: 'GraphQL API and bulk operations, production incidents included.' },
       { id: 'woocommerce', name: 'WooCommerce', route: 'airbyte', note: 'Official connector optimised: refunds are only read for orders that were actually refunded.' },
