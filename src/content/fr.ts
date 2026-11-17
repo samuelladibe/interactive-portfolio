@@ -207,10 +207,11 @@ export const fr: Content = {
   },
   projects: {
     title: 'Projets livrés',
-    lead: 'Produits et outils conçus chez Digital Forge en 2026.',
+    lead: 'Produits et outils conçus en 2026, la plupart chez Digital Forge.',
     showMore: 'Voir les {n} autres projets',
     showLess: 'Afficher moins de projets',
     items: [
+      { name: 'Plateforme data retail', meta: 'Nov., cas d’usage technique réel', text: 'API retail ingérée chaque heure (Cloud Run Jobs, GCS, BigQuery), Dataform avec SCD2 et assertions, data agent en langage naturel. 100 % Terraform, CI/CD sans clé.', result: 'Agent évalué à 15/15, moins de 2 € par mois' },
       { name: 'Agent IA de dashboards', meta: 'Mai à août, concepteur principal', text: 'Agent IA text-to-SQL qui transforme un brief métier en dashboard React depuis BigQuery.', result: '83 tests, objectif de 2-3 jours à 2-3 heures' },
       { name: 'Plateforme BI SaaS', meta: 'Janv. à juil., full-stack et DevOps', text: 'BI SaaS maison : Supabase auto-hébergé, Terraform, CI/CD Workload Identity, filtres server-side.', result: 'Comparaisons N-1 et filtres en cascade' },
       { name: 'Leads Generator', meta: 'Août à sept., concepteur', text: 'De HubSpot à un cockpit de relance : Airbyte, BigQuery, Dataform et scoring explicable.', result: '164 tests unitaires' },
@@ -242,7 +243,7 @@ export const fr: Content = {
       { title: 'Langages', items: [['Python', 'production'], ['GoogleSQL', 'production'], ['Bash', 'production'], ['YAML, Jinja, TOML', 'production'], ['JavaScript', 'project'], ['TypeScript, React', 'project'], ['FastAPI', 'project']] },
       { title: 'Sources intégrées', items: [['Shopify GraphQL', 'production'], ['NetSuite SuiteQL', 'production'], ['SFMC', 'production'], ['Splio', 'production'], ['Skeepers', 'production'], ['Shippingbo', 'production'], ['WooCommerce', 'production'], ['HubSpot', 'production'], ['PostgreSQL', 'production'], ['MSSQL', 'production'], ['Oracle', 'production'], ['MySQL', 'production']] },
       { title: 'BI et restitution', items: [['Looker Studio', 'production'], ['Looker', 'production'], ['Power BI', 'production'], ['Tableau', 'production'], ['Metabase', 'production'], ['Apps Script', 'production']] },
-      { title: 'IA générative et scraping', items: [['Claude API', 'project'], ['Text-to-SQL', 'project'], ['Claude Code, MCP', 'project'], ['Playwright', 'project'], ['httpx, BeautifulSoup', 'project'], ['pytest', 'project']] },
+      { title: 'IA générative et scraping', items: [['Claude API', 'project'], ['Text-to-SQL', 'project'], ['Data agents BigQuery', 'project'], ['Claude Code, MCP', 'project'], ['Playwright', 'project'], ['httpx, BeautifulSoup', 'project'], ['pytest', 'project']] },
       { title: 'Écosystème hors GCP', items: [['Airflow', 'project'], ['Spark', 'project'], ['MongoDB', 'project'], ['Neo4j', 'project'], ['AWS', 'project'], ['Azure', 'project']], note: 'Souvent disponibles en version managée sur GCP (Composer, Dataproc).' },
       { title: 'Préparation PDE', items: [['Dataflow', 'learning'], ['Dataproc', 'learning'], ['Kafka', 'learning'], ['Kubernetes', 'learning']], note: 'Pratiqués pendant la préparation de la certification, projets perso prévus.' },
     ],
