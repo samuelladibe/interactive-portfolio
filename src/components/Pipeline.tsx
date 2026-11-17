@@ -278,20 +278,16 @@ export default function Pipeline({ t }: { t: Content['pipeline'] }) {
         </text>
       </svg>
 
-      <div aria-live="polite" className="mt-8 grid gap-3 lg:mt-4 lg:grid-cols-[minmax(0,14rem)_minmax(0,1fr)] lg:gap-8">
-        <p className="font-display text-xl font-bold">{selected.name}</p>
-        <div>
-          <p className="max-w-[62ch] text-lg">{selected.note}</p>
-          {/* The diagram is hidden on small screens, so the route is written out here. */}
-          <p className="mt-3 font-mono text-sm text-muted lg:hidden">
-            {[ingestLabel, ...LAYERS.map((layer) => layer.name), t.outputNode].join(' > ')}
-          </p>
-          <p className="mt-3 text-sm text-muted lg:hidden">
-            <span className="font-semibold text-ink">{t.learning.label}</span>
-            <br />
-            Dataflow, Dataproc Serverless, Composer (Airflow)
-          </p>
-        </div>
+      {/* The diagram is hidden on small screens, so the route is written out here. */}
+      <div className="mt-6 lg:hidden">
+        <p aria-live="polite" className="font-mono text-sm text-muted">
+          {[ingestLabel, ...LAYERS.map((layer) => layer.name), t.outputNode].join(' > ')}
+        </p>
+        <p className="mt-3 text-sm text-muted">
+          <span className="font-semibold text-ink">{t.learning.label}</span>
+          <br />
+          Dataflow, Dataproc Serverless, Composer (Airflow)
+        </p>
       </div>
     </div>
   );
