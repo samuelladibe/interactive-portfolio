@@ -207,11 +207,11 @@ export const en: Content = {
   },
   projects: {
     title: 'Shipped projects',
-    lead: 'Products and tools built in 2026, at Digital Forge and as personal projects.',
+    lead: 'Products and tools built in 2026, most of them at Digital Forge.',
     showMore: 'Show the other {n} projects',
     showLess: 'Show fewer projects',
     items: [
-      { name: 'Retail data platform', meta: 'Nov., personal project', text: 'Hourly ingestion of a retail API (Cloud Run Jobs, GCS, BigQuery), Dataform with SCD2 and assertions, natural-language data agent. 100% Terraform, keyless CI/CD.', result: 'Agent scored 15/15, under €2 a month' },
+      { name: 'Retail data platform', meta: 'Nov., real-world technical use case', text: 'Hourly ingestion of a retail API (Cloud Run Jobs, GCS, BigQuery), Dataform with SCD2 and assertions, natural-language data agent. 100% Terraform, keyless CI/CD.', result: 'Agent scored 15/15, under €2 a month' },
       { name: 'AI dashboard agent', meta: 'May to Aug., lead designer', text: 'Text-to-SQL AI agent that turns a business brief into a React dashboard on top of BigQuery.', result: '83 tests, target of 2-3 days down to 2-3 hours' },
       { name: 'SaaS BI platform', meta: 'Jan. to July, full-stack and DevOps', text: 'In-house SaaS BI: self-hosted Supabase, Terraform, Workload Identity CI/CD, server-side filters.', result: 'Year-on-year comparisons and cascading filters' },
       { name: 'Leads Generator', meta: 'Aug. to Sept., designer', text: 'From HubSpot to a follow-up cockpit: Airbyte, BigQuery, Dataform and explainable scoring.', result: '164 unit tests' },
