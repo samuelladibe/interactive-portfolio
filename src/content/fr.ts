@@ -28,13 +28,14 @@ export const fr: Content = {
   },
   pipeline: {
     title: 'Le chemin de la donnée, de la source au dashboard',
-    hint: 'Choisissez une source pour voir sa route et ce que j’y ai résolu.',
+    hint: 'Choisissez une source pour voir sa route.',
     sourcesLabel: 'Sources',
     ingestionLabel: 'Ingestion',
     warehouseLabel: 'BigQuery, modélisé avec Dataform',
     outputLabel: 'Restitution',
     outputNode: 'Dashboards',
     otherNode: 'Datastream, SFTP',
+    learning: { label: 'En apprentissage', note: 'Prochaines briques pour l’ingestion batch et streaming', orchestration: 'orchestration des DAG' },
     sources: [
       { id: 'shopify', name: 'Shopify', route: 'airbyte', note: 'API GraphQL et bulk operations, incidents de production compris.' },
       { id: 'woocommerce', name: 'WooCommerce', route: 'airbyte', note: 'Connecteur officiel optimisé : les remboursements ne sont lus que pour les commandes remboursées.' },

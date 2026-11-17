@@ -40,6 +40,8 @@ export interface Content {
     outputLabel: string;
     outputNode: string;
     otherNode: string;
+    /** Tools being learned, drawn apart from the routes used in production. */
+    learning: { label: string; note: string; orchestration: string };
     sources: { id: string; name: string; route: Route; note: string }[];
   };
   results: {
