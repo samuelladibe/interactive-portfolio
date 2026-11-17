@@ -207,10 +207,11 @@ export const fr: Content = {
   },
   projects: {
     title: 'Projets livrés',
-    lead: 'Produits et outils conçus chez Digital Forge en 2026.',
+    lead: 'Produits et outils conçus en 2026, chez Digital Forge et en projet personnel.',
     showMore: 'Voir les {n} autres projets',
     showLess: 'Afficher moins de projets',
     items: [
+      { name: 'Plateforme data retail', meta: 'Nov., projet personnel', text: 'API retail ingérée chaque heure (Cloud Run Jobs, GCS, BigQuery), Dataform avec SCD2 et assertions, data agent en langage naturel. 100 % Terraform, CI/CD sans clé.', result: 'Agent évalué à 15/15, moins de 2 € par mois' },
       { name: 'Agent IA de dashboards', meta: 'Mai à août, concepteur principal', text: 'Agent IA text-to-SQL qui transforme un brief métier en dashboard React depuis BigQuery.', result: '83 tests, objectif de 2-3 jours à 2-3 heures' },
       { name: 'Plateforme BI SaaS', meta: 'Janv. à juil., full-stack et DevOps', text: 'BI SaaS maison : Supabase auto-hébergé, Terraform, CI/CD Workload Identity, filtres server-side.', result: 'Comparaisons N-1 et filtres en cascade' },
       { name: 'Leads Generator', meta: 'Août à sept., concepteur', text: 'De HubSpot à un cockpit de relance : Airbyte, BigQuery, Dataform et scoring explicable.', result: '164 tests unitaires' },
